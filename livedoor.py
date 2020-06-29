@@ -59,7 +59,8 @@ class LivedoorNewsCorpus:
 
         # ここらへんはタスクに応じて変えられるとよいが, 今回はこれでいいや
         for cat_name in self.categories:
-            files = glob(os.path.join(self.text_dir, cat_name, f"{cat_name}*.txt"))
+            files = glob(os.path.join(
+                self.text_dir, cat_name, f"{cat_name}*.txt"))
             files = sorted(files)
             bodies = [self.get_body_from_file(f) for f in files]
             labels = [cat_name] * len(bodies)
